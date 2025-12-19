@@ -74,10 +74,6 @@ class ClientHandler implements Runnable {
             input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             output = new PrintWriter(socket.getOutputStream(), true);
 
-            output.println("Welcome to the chat!");
-            output.println("Your ID: " + clientId);
-            output.println("Commands: /name <newname>, /users, /quit\n");
-
             ChatServer.broadcast("[" + ChatServer.getTimestamp() + "] " + username + " joined", this);
             System.out.println(username + " joined (ID: " + clientId + ")");
 
